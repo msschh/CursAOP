@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit evaluare</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a th:href="@{'/index'}">Hello</a></li>
+                        <li><a th:href="@{'/angajat'}">Angajat</a></li>
+                        <li><a th:href="@{'/candidat'}">Candidat</a></li>
+                        <li><a th:href="@{'/competenta'}">Competenta</a></li>
+                        <li><a th:href="@{'/evaluare'}">Evaluare</a></li>
+                        <li><a th:href="@{'/functie'}">Functie</a></li>
+                        <li><a th:href="@{'/utilizator'}">Utilizator</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form  th:object="${evaluare}" th:action="@{'/evaluare/createOrUpdate'}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="pannel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Date generale</h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Candidat:</label>
+                                    <select class="form-control" th:field="*{candidat.id}">
+                                        <option th:each="candidatEach : ${candidati}"
+                                                th:value="${candidatEach.id}"
+                                                th:selected="${candidatEach.id.equals(evaluare.candidat.id)}"
+                                                th:text="${candidatEach.numeComplet}">Nume</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Responsabil:</label>
+                                    <select class="form-control" th:field="*{responsabil.id}">
+                                        <option th:each="responsabilEach : ${responsabili}"
+                                                th:value="${responsabilEach.id}"
+                                                th:selected="${responsabilEach.id.equals(evaluare.responsabil.id)}"
+                                                th:text="${responsabilEach.numeComplet}">Nume</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Descriere:</label>
+                                    <textarea rows="25" class="form-control" th:field="*{descriere}"></textarea>
+                                </div>
+                            </div>
+                            <table><td th:if="${#fields.hasErrors('descriere')}" th:errors="*{descriere}">Error</td></table>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

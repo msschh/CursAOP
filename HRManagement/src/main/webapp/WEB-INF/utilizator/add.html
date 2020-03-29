@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit utilizator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a th:href="@{'/index'}">Hello</a></li>
+                        <li><a th:href="@{'/angajat'}">Angajat</a></li>
+                        <li><a th:href="@{'/candidat'}">Candidat</a></li>
+                        <li><a th:href="@{'/competenta'}">Competenta</a></li>
+                        <li><a th:href="@{'/evaluare'}">Evaluare</a></li>
+                        <li><a th:href="@{'/functie'}">Functie</a></li>
+                        <li><a th:href="@{'/utilizator'}">Utilizator</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form  th:object="${utilizator}" th:action="@{'/utilizator/createOrUpdate'}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="pannel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Date generale</h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Username:</label>
+                                    <input type="text" class="form-control" th:field="*{username}"/>
+                                </div>
+                            </div>
+                            <table><td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Error</td></table>
+                            <div th:if="${utilizator.id == null}">
+                                <div class="row">
+                                    <div class="col-md-12 form-group">
+                                        <label>Parola:</label>
+                                        <input type="password" class="form-control" th:field="*{parola}"/>
+                                    </div>
+                                </div>
+                                <table><td th:if="${#fields.hasErrors('parola')}" th:errors="*{parola}">Error</td></table>
+                            </div>
+                            <div th:if="${utilizator.id != null}">
+                                <input type="hidden" th:field="*{parola}"/>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Angajat:</label>
+                                    <select class="form-control" th:field="*{angajat.id}">
+                                        <option th:each="angajatEach : ${angajati}"
+                                                th:value="${angajatEach.id}"
+                                                th:selected="${angajatEach.id.equals(utilizator.angajat.id)}"
+                                                th:text="${angajatEach.numeComplet}">Nume</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Roluri:</label>
+                                    <li th:each="role : ${roles}">
+                                        <input type="checkbox" th:field="*{roles}" th:value="${role.id}" />
+                                        <label th:for="${#ids.prev('roles')}"
+                                               th:text="${role.name}">roles</label>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

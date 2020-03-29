@@ -1,0 +1,8 @@
+com\apbdoo\hrm\service\FunctieService.class
+com\apbdoo\hrm\SpringJpaApplication.class
+com\apbdoo\hrm\controller\FunctieController.class
+com\apbdoo\hrm\entity\Functie.class
+com\apbdoo\hrm\repository\FunctieRepository.class
+com\apbdoo\hrm\config\ProjectConfig.class
+com\apbdoo\hrm\controller\IndexController.class
+com\apbdoo\hrm\service\FunctieServiceImpl.class

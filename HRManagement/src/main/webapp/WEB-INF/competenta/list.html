@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Competente</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    <style>
+        .pagination-div{user-select: none;}
+        .pagination-div span{border-radius:3px;border:1px solid #999;
+            padding:5px;margin:10px 0px 0px 10px;display:inline-block}
+        span.selected{background:#ccf;}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a th:href="@{'/index'}">Hello</a></li>
+                        <li><a th:href="@{'/angajat'}">Angajat</a></li>
+                        <li><a th:href="@{'/candidat'}">Candidat</a></li>
+                        <li><a th:href="@{'/competenta'}">Competenta</a></li>
+                        <li><a th:href="@{'/evaluare'}">Evaluare</a></li>
+                        <li><a th:href="@{'/functie'}">Functie</a></li>
+                        <li><a th:href="@{'/utilizator'}">Utilizator</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-10 ">
+                            <h1 class="panel-title">Competenta</h1>
+                        </div>
+                        <div class="col-md-1">
+                            <a class="btn btn-default" href="#" th:href="@{'/competenta/add'}" role="button">New</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive" th:if="${not #lists.isEmpty(page.content)}">
+                        <table class="table table-hover ">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>Id</th>
+                                <th>Nume</th>
+                                <th>View</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tr th:remove="all">
+                                <td>1</td>
+                                <td>1</td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Update</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr th:remove="all">
+                                <td>2</td>
+                                <td>2</td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Update</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr th:each="competenta : ${page.content}">
+                                <td th:text="${competenta.id}">1</td>
+                                <td th:text="${competenta.nume}">nume</td>
+                                <td><a href="#" th:href="@{'/competenta/view/' + ${competenta.id}}">View</a></td>
+                                <td><a href="#" th:href="@{'/competenta/edit/' + ${competenta.id}}">Update</a></td>
+                                <td><a href="#" th:href="@{'/competenta/delete/' + ${competenta.id}}">Delete</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="pagination-div">
+                    <span th:if="${page.hasPrevious()}">
+                        <a th:href="@{/competenta(page=${page.number-1},size=${page.size})}">Previous</a>
+                    </span>
+                    <th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+                        <span th:if="${page.number == i}" class="selected">[[${i}+1]]</span>
+                        <span th:unless="${page.number == i}">
+                            <a th:href="@{/competenta(page=${i},size=${page.size})}">[[${i}+1]]</a>
+                        </span>
+                    </th:block>
+                    <span th:if="${page.hasNext()}">
+                        <a th:href="@{/competenta(page=${page.number+1},size=${page.size})}">Next</a>
+                    </span>
+                    <br/><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

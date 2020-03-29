@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit angajat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a th:href="@{'/index'}">Hello</a></li>
+                        <li><a th:href="@{'/angajat'}">Angajat</a></li>
+                        <li><a th:href="@{'/candidat'}">Candidat</a></li>
+                        <li><a th:href="@{'/competenta'}">Competenta</a></li>
+                        <li><a th:href="@{'/evaluare'}">Evaluare</a></li>
+                        <li><a th:href="@{'/functie'}">Functie</a></li>
+                        <li><a th:href="@{'/utilizator'}">Utilizator</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form  th:object="${angajat}" th:action="@{'/angajat/createOrUpdate'}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="pannel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Date generale</h1>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Cod:</label>
+                                    <input type="text" class="form-control" th:field="*{cod}"/>
+                                </div>
+                            </div>
+                            <table><td th:if="${#fields.hasErrors('cod')}" th:errors="*{cod}">Error</td></table>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Nume:</label>
+                                    <input type="text" class="form-control" th:field="*{nume}"/>
+                                </div>
+                            </div>
+                            <table><td th:if="${#fields.hasErrors('nume')}" th:errors="*{nume}">Error</td></table>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Prenume:</label>
+                                    <input type="text" class="form-control" th:field="*{prenume}"/>
+                                </div>
+                            </div>
+                            <table><td th:if="${#fields.hasErrors('prenume')}" th:errors="*{prenume}">Error</td></table>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Telefon:</label>
+                                    <input type="text" class="form-control" th:field="*{telefon}"/>
+                                </div>
+                            </div>
+                            <table><td th:if="${#fields.hasErrors('telefon')}" th:errors="*{telefon}">Error</td></table>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Email:</label>
+                                    <input type="text" class="form-control" th:field="*{email}"/>
+                                </div>
+                            </div>
+                            <table><td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error</td></table>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Dt nastere:</label>
+                                    <input type="date" class="form-control" th:field="*{dtNastere}"/>
+                                </div>
+                            </div>
+                            <table><td th:if="${#fields.hasErrors('dtNastere')}" th:errors="*{dtNastere}">Error</td></table>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <label>Functie:</label>
+                                    <select class="form-control" th:field="*{functie.id}">
+                                        <option th:each="functieEach : ${functii}"
+                                                th:value="${functieEach.id}"
+                                                th:selected="${functieEach.id.equals(angajat.functie.id)}"
+                                                th:text="${functieEach.nume}">Nume</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
