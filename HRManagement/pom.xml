@@ -24,15 +24,15 @@
         <java.version>1.8</java.version>
         <springsecurity.version>5.1.2.RELEASE</springsecurity.version>
     </properties>
-    <dependency>
-        <groupId>org.aspectj</groupId>
-        <artifactId>aspectjweaver</artifactId>
-        <version>1.8.9</version>
-    </dependency>
     <dependencies>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
+            <version>1.8.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
             <version>1.8.9</version>
         </dependency>
         <dependency>

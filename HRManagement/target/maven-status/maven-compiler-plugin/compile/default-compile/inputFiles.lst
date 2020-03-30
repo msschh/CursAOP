@@ -1,8 +1,42 @@
-C:\Users\alexanen\Desktop\Proiect spring\AplProfBDOO\HRManagement\src\main\java\com\apbdoo\hrm\repository\FunctieRepository.java
-C:\Users\alexanen\Desktop\Proiect spring\AplProfBDOO\HRManagement\src\main\java\com\apbdoo\hrm\config\ProjectConfig.java
-C:\Users\alexanen\Desktop\Proiect spring\AplProfBDOO\HRManagement\src\main\java\com\apbdoo\hrm\service\FunctieServiceImpl.java
-C:\Users\alexanen\Desktop\Proiect spring\AplProfBDOO\HRManagement\src\main\java\com\apbdoo\hrm\service\FunctieService.java
-C:\Users\alexanen\Desktop\Proiect spring\AplProfBDOO\HRManagement\src\main\java\com\apbdoo\hrm\controller\FunctieController.java
-C:\Users\alexanen\Desktop\Proiect spring\AplProfBDOO\HRManagement\src\main\java\com\apbdoo\hrm\controller\IndexController.java
-C:\Users\alexanen\Desktop\Proiect spring\AplProfBDOO\HRManagement\src\main\java\com\apbdoo\hrm\entity\Functie.java
-C:\Users\alexanen\Desktop\Proiect spring\AplProfBDOO\HRManagement\src\main\java\com\apbdoo\hrm\SpringJpaApplication.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\controller\AngajatController.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\AngajatServiceImpl.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\repository\UtilizatorRepository.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\controller\UtilizatorController.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\entity\Role.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\repository\RoleRepository.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\RoleServiceImpl.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\config\AOPConfig.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\config\SecurityConfiguration.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\entity\Functie.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\AngajatService.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\FunctieServiceImpl.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\util\EncryptionUtil.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\controller\CompetentaController.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\repository\CompetentaRepository.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\util\CharacterEncoder.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\config\ProjectConfig.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\entity\Utilizator.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\EvaluareService.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\controller\FunctieController.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\CandidatService.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\controller\EvaluareController.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\repository\EvaluareRepository.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\CandidatServiceImpl.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\util\CharacterEncoderBASE64.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\entity\Angajat.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\RoleService.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\FunctieService.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\repository\AngajatRepository.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\CompetentaService.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\controller\CandidatController.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\repository\CandidatRepository.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\entity\Candidat.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\aspect\LoggingAspect.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\UtilizatorServiceImpl.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\entity\Competenta.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\repository\FunctieRepository.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\CompetentaServiceImpl.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\UtilizatorService.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\SpringJpaApplication.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\entity\Evaluare.java
+C:\Users\alexanen\Desktop\CursAOP\HRManagement\src\main\java\com\apbdoo\hrm\service\EvaluareServiceImpl.java
