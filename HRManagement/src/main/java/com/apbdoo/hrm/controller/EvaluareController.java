@@ -1,7 +1,6 @@
 package com.apbdoo.hrm.controller;
 
 import com.apbdoo.hrm.entity.Evaluare;
-import com.apbdoo.hrm.entity.Utilizator;
 import com.apbdoo.hrm.service.AngajatService;
 import com.apbdoo.hrm.service.CandidatService;
 import com.apbdoo.hrm.service.EvaluareService;

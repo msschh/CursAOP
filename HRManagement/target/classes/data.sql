@@ -20,8 +20,8 @@ insert into ROLE(id, name) values ('1', 'ROLE_ADMIN');
 insert into ROLE(id, name) values ('2', 'ROLE_CANDIDAT');
 insert into ROLE(id, name) values ('3', 'ROLE_HR');
 
-insert into UTILIZATOR(id, username, parola, angajat_id) values ('1', 'admin', '$2a$10$0qFOkp.bzguq6i7fQZ3S3Oli8cPIh5pVbL/5QctTbuRR3yzgQQOy2', '1');
+insert into UTILIZATOR(id, username, parola, angajat_id) values ('999', 'admin', 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=', '1');
 
-insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('1', '1');
-insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('1', '2');
-insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('1', '3');
+insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('999', '1');
+insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('999', '2');
+insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('999', '3');

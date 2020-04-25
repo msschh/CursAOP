@@ -16,10 +16,11 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-7 col-md-offset-3">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a th:href="@{'/index'}">Hello</a></li>
+                        <li><a th:href="@{'/login'}">Login</a></li>
                         <li><a th:href="@{'/angajat'}">Angajat</a></li>
                         <li><a th:href="@{'/candidat'}">Candidat</a></li>
                         <li><a th:href="@{'/competenta'}">Competenta</a></li>
@@ -41,7 +42,7 @@
             <div th:if="${param.logout}">
                 You have been logged out.
             </div>
-            <form th:action="@{/login}" method="post">
+            <form th:object="${utilizator}" th:action="@{/login}" method="post">
                 <div class="pannel-group">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -51,15 +52,17 @@
                             <div class="row">
                                 <div class="col-md-12 form-group">
                                     <label>Username:</label>
-                                    <input type="text" class="form-control" name="username"/>
+                                    <input type="text" class="form-control" th:field="*{username}"/>
                                 </div>
                             </div>
+                            <table><td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Utilizatorul nu exista.</td></table>
                             <div class="row">
                                 <div class="col-md-12 form-group">
                                     <label>Password:</label>
-                                    <input type="password" class="form-control" name="password"/>
+                                    <input type="password" class="form-control" th:field="*{parola}"/>
                                 </div>
                             </div>
+                            <table><td th:if="${#fields.hasErrors('parola')}" th:errors="*{parola}">Parola este incorecta.</td></table>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Sign in</button>

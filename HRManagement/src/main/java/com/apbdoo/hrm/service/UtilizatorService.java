@@ -1,11 +1,10 @@
 package com.apbdoo.hrm.service;
 
 import com.apbdoo.hrm.entity.Utilizator;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
-public interface UtilizatorService extends UserDetailsService {
+public interface UtilizatorService {
 
     List<Utilizator> getUtilizatori();
 
