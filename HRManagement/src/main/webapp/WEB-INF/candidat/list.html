@@ -90,6 +90,44 @@
                         </table>
                     </div>
                 </div>
+                <div class="panel-body">
+                    <div class="table-responsive" th:if="${not #lists.isEmpty(viewCandidats)}">
+                        Candidati vazuti:<br>
+                        <table class="table table-hover ">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>Nume</th>
+                                <th>Prenume</th>
+                                <th>Telefon</th>
+                                <th>Recruiter</th>
+                                <th>View</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tr th:remove="all">
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td><a href="#">View</a></td>
+                                <td><a href="#">Update</a></td>
+                                <td><a href="#">Delete</a></td>
+                            </tr>
+                            <tr th:remove="all">
+
+                            <tr th:each="candidat : ${viewCandidats}">
+                                <td th:text="${candidat.nume}">nume</td>
+                                <td th:text="${candidat.prenume}">prenume</td>
+                                <td th:text="${candidat.telefon}">telefon</td>
+                                <td th:text="${candidat.recruiter.numeComplet}">recruiter</td>
+                                <td><a href="#" th:href="@{'/candidat/view/' + ${candidat.id}}">View</a></td>
+                                <td><a href="#" th:href="@{'/candidat/edit/' + ${candidat.id}}">Update</a></td>
+                                <td><a href="#" th:href="@{'/candidat/delete/' + ${candidat.id}}">Delete</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

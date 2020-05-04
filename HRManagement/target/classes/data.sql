@@ -11,6 +11,10 @@ insert into COMPETENTA(ID, NUME, DESCRIERE) values ('1', 'Java SE', 'Java SE');
 insert into COMPETENTA(ID, NUME, DESCRIERE) values ('2', '.NET', '.NET');
 
 insert into CANDIDAT(ID, NUME, PRENUME, TELEFON, EMAIL, RECRUITER_ID) values ('1', 'Ioana', 'Popa', '0726316473', 'popa.ioana@yahoo.com', '1');
+insert into CANDIDAT(ID, NUME, PRENUME, TELEFON, EMAIL, RECRUITER_ID) values ('2', 'Cristian', 'Popescu', '', 'popco@yahoo.com', '1');
+insert into CANDIDAT(ID, NUME, PRENUME, TELEFON, EMAIL, RECRUITER_ID) values ('3', 'Mihai', 'Stroe', '', 'mihaistroe@yahoo.com', '1');
+insert into CANDIDAT(ID, NUME, PRENUME, TELEFON, EMAIL, RECRUITER_ID) values ('4', 'Gigel', 'Constantin', '0726544733', 'consta@yahoo.com', '1');
+
 
 insert into CANDIDAT_COMPETENTA(CANDIDAT_ID, COMPETENTA_ID) values ('1', '2');
 
@@ -21,7 +25,9 @@ insert into ROLE(id, name) values ('2', 'ROLE_CANDIDAT');
 insert into ROLE(id, name) values ('3', 'ROLE_HR');
 
 insert into UTILIZATOR(id, username, parola, angajat_id) values ('999', 'admin', 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=', '1');
+insert into UTILIZATOR(id, username, parola, angajat_id) values ('1000', 'candidat', 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=', '1');
 
 insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('999', '1');
 insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('999', '2');
 insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('999', '3');
+insert into UTILIZATORI_ROLES(utilizator_id, role_id) values ('1000', '2');
